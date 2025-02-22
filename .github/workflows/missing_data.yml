@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: source
       id: source
-      run: echo "RESULT=hello" >> "${{GITHUB_OUTPUT}}"     # GITHUB_OUTPUTへの書き込み
+      run: echo "RESULT=hello" >> "${GITHUB_OUTPUT}"     # GITHUB_OUTPUTへの書き込み
     - name: output  
-      run: echo "${{steps.source.outputs.RESULT}}"         # GITHUB_OUTPUTから参照 
+      env:
+        OUTPUT: "${{steps.source.outputs.RESULT}}"       # stepsコンテキストから参照 
+      run: echo "${OUTPUT}"
