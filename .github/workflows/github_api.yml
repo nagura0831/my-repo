@@ -1,0 +1,15 @@
+name: use github api
+on: pull_request
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN : ${{secrets.GITHUB_TOKEN}}
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - name: comment to actor
+        # GITHUB_HEAD_REF: ソースブランチ
+        # GITHUB_ACTOR: ワークフロー実行者名
+        run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello, ${GITHUB_ACTOR}"
