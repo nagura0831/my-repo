@@ -1,0 +1,12 @@
+name: Job summaries
+on: push
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | # マークダウンテキストをジョブサマリーへ出力
+          echo "# タイトル" >> "${GITHUB_STEP_SUMMARY}"
+          echo "## サブタイトル" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- 箇条書き1" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- 箇条書き2" >> "${GITHUB_STEP_SUMMARY}"
+          echo "  - ネスト箇条書き2-1" >> "${GITHUB_STEP_SUMMARY}"
