@@ -1,4 +1,5 @@
 name: Annotetion
+run-name: Annotation
 on: push
 jobs:
   log:
