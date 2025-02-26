@@ -7,5 +7,6 @@ jobs:
       PASSWORD: SecretsPassValue
     steps:
       - run: |
+          set-x
           echo "::add-mask::${PASSWORD}"
           echo "${PASSWORD}"
