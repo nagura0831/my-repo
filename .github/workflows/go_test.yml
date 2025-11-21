@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4 # ステップ1:チェックアウト
+        uses: actions/checkout@v6 # ステップ1:チェックアウト
       - name: build-go
         uses: actions/setup-go@v5 # ステップ２：言語のセットアップ
         with: 
