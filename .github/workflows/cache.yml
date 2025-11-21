@@ -4,7 +4,7 @@ jobs:
   cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/cache@v4                         # キャッシュの復元と保存を担う。キャシュは、Githubが管理するキャッシュ保存領域に保存する。
         with:
           key: test-${{ runner.os }}-${{ github.sha }} # ithubが管理するキャッシュ保存領域から完全一致検索するためのキャッシュキー
